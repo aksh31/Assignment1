@@ -1,0 +1,23 @@
+
+
+.mb-4 {
+    margin-bottom: 20px;
+}
+.toDo{
+    border: 2px solid rgba(0, 0, 0, 0.453);
+    height: 430px;
+    overflow-y: scroll;
+}
+.strikethrough{
+    text-decoration: line-through;
+}
+.mt-0{
+    margin-top: 0 !important;
+}
+.input {
+    width: 100%;
+    border: 0;
+    border: 2px solid rgba(0, 0, 0, 0.448);
+    border-radius: 6px;
+    padding: 4px;
+}

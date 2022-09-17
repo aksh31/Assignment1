@@ -1,0 +1,68 @@
+
+
+<h1 class="text-center">Users Data</h1>
+<div class="clr-row">
+    <div class="clr-col-sm-6 clr-col-md-6 clr-col-lg-4 clr-col-xl-3" *ngFor="let user of userArr">
+        <div class="card">
+            <div class="card-header bg-primary">
+                {{user.name}}
+            </div>
+            <div class="card-block">
+                <div class="card-title">
+                    UserId : {{user.id}}
+                </div>
+                <div class="card-text">
+                    <table class="table table-noborder table-compact">
+                        <tbody>
+                            <tr>
+                                <td class="left">Name  :</td>
+                                <td class="left">{{user.name}}</td>
+                            </tr>
+                            <tr>
+                                <td class="left">Username:</td>
+                                <td class="left">{{user.username}}</td>
+                            </tr>
+                            <tr>
+                                <td class="left">email :</td>
+                                <td class="left">{{user.email}}</td>
+                            </tr>
+                            <tr>
+                                <td class="left">Phone :</td>
+                                <td class="left">{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td class="left">Website :</td>
+                                <td class="left">{{user.website}}</td>
+                            </tr>
+                            <hr>
+                            <tr>
+                                <td class="left center">Address :</td>
+                                <td class="left">{{user.address.suite}}<br>
+                                    {{user.address.street}}<br>
+                                    {{user.address.city}}<br>
+                                    {{user.address.zipcode}}<br>
+                                </td>
+                            </tr>
+                            <hr>
+                            <tr>
+                                <td class="left">GeoLocation:</td>
+                                <td class="left">{{user.address.geo.lat}}, {{user.address.geo.lng}}</td>
+                            </tr>
+                            <hr>
+                            <tr>
+                                <td class="left">Company :</td>
+                                <td class="left">{{user.company.name}}<br>
+                                    {{user.company.catchPhrase}}
+                                    {{user.company.bs}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-link" routerLink="/usersToDo" (click)="onClickButton(user.id)">View ToDo</button>
+            </div>
+        </div>
+    </div>
+</div>

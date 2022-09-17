@@ -1,0 +1,41 @@
+<h1 class="text-center mb-4">Users ToDo List</h1>
+
+<div class="clr-row clr-justify-content-center">
+    <div class="clr-col-sm-8">
+        <div class="toDo">
+            <table class="table mt-0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Change</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let toDo of toDoArr">
+                        <td>{{toDo.id}}</td>
+                        <td [ngClass]="toDo.completed ? 'strikethrough' : 'null'">{{toDo.title}}</td>
+                        <td>{{toDo.completed}}</td>
+                        <td><input type="checkbox" (click)="onChangeHandler($event, toDo.id)" /></td>
+                        <td><a href="javascript:;" (click)="onDeleteHandler(toDo.id)" ><clr-icon shape="trash" class="is-error"></clr-icon></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div class="clr-row clr-align-items-center">
+            <div class="clr-col-sm-6 clr-col-md-8 clr-col-lg-9 clr-col-xl-10">
+                <div class="group">
+                    <input type="text" placeholder="Enter your todo here" #input class="input">
+                </div>
+            </div>
+            <div class="clr-col-sm-2">
+                <div class="group">
+                    <button class="btn btn-primary" (click)="onAddNewToDO(input.value)">Add New ToDo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
